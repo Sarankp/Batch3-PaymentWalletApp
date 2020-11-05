@@ -1,3 +1,6 @@
+/*
+*AUTHOR: Pallavi Mondrety*/
+
 package com.cg.paymentapp.beans;
 
 import javax.persistence.CascadeType;
