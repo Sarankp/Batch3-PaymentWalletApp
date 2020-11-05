@@ -1,5 +1,5 @@
 /**
- *AUTHOR Name Sarankumar Pagadala */
+ *AUTHOR: Sarankumar Pagadala */
 
 
 package com.cg.paymentapp.beans;
