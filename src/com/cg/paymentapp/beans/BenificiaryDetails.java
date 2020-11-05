@@ -1,3 +1,7 @@
+/*
+*AUTHOR: Saraswati Sriadula*/
+
+
 package com.cg.paymentapp.beans;
 import javax.persistence.Column;
 import javax.persistence.Entity;
