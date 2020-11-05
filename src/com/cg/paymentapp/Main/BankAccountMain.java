@@ -1,20 +1,19 @@
-package com.cg.paymentapp.Main;
+package com.cg.paymentapp.service;
 
 
-		import java.util.List;
-import java.util.Scanner;
+		import java.util.Scanner;
         import com.cg.paymentapp.beans.BankAccount;
         import com.cg.paymentapp.beans.Customer;
         import com.cg.paymentapp.beans.Wallet;
-import com.cg.paymentapp.service.AccountServiceImpl;
-import com.cg.paymentapp.service.IAccountService;
+
+import antlr.collections.List;
 
 		public class BankAccountMain {
 			
 			
 			
 		private static IAccountService service;
-		private static Wallet user;
+		private static BankAccount bacc;
 
 		public static void main(String[] args) {
 			// TODO Auto-generated method stub
@@ -58,7 +57,7 @@ import com.cg.paymentapp.service.IAccountService;
 		private static void performAddAccount(Scanner sc) {
 			
 			service = new AccountServiceImpl();
-			user = new Wallet();
+		      bacc = new BankAccount();
 			
 			System.out.println("Enter AccountDetails:");
 			System.out.println("Enter accountNo");
@@ -70,62 +69,62 @@ import com.cg.paymentapp.service.IAccountService;
 			System.out.println("Enter balance");
 			double balance = sc.nextDouble();
 			
-			user.setAccountNo(accountNo);
-			user.setIfscCode(ifscCode);
+			bacc.setAccountNo(accountNo);
+			bacc.setIfscCode(ifscCode);
 			
-			Wallet userInstance =service.addAccount(user);
+			Wallet baccInstance =service.addAccount(bacc);
 			
 			System.out.println("Bank Account Added!!!");
 			System.out.println("Added Account Details:");
-			System.out.println(userInstance.getAccountNo());
-			System.out.println(userInstance.getIfscCode());
-			System.out.println(userInstance.getBankName());
-			System.out.println(userInstance.getBalance());
+			System.out.println(baccInstance.getAccountNo());
+			System.out.println(baccInstance.getIfscCode());
+			System.out.println(baccInstance.getBankName());
+			System.out.println(baccInstance.getBalance());
 		}
 		
 		
 		private static void performRemoveAccount(Scanner sc) {
 			
 			service = new AccountServiceImpl();
-			user = new Wallet();
+			bacc = new BankAccount();
 			
 			System.out.println("\n\nRemoveAccount");
 			System.out.println("Enter AccountNo to Remove from Account");
-			int accountId = sc.nextInt();
+			int accountNo = sc.nextInt();
 			
-			Wallet userInstance = service.viewAccount(accountNo);
+			Wallet baccInstance = service.viewAccount(bacc);
 			
-			service.removeAccount(accountNo);
+			service.removeAccount(bacc);
 			
-			System.out.println(userInstance.getAccountNo() + "Removed from DataBase");
+			System.out.println(baccInstance.getAccountNo() + "Removed from DataBase");
 			
 		}
       private static void performViewAccount(Scanner sc) {
 			
 			service = new AccountServiceImpl();
-			user = new Wallet();
+			bacc = new BankAccount();
 			
 			System.out.println("\n\nEnter AccountDetails to view");
 			System.out.println("Enter accountNo to fetch results");
 			int accountNo = sc.nextInt();
 			
-			Account userInstance = service.viewAccount(accountNo);
+			Wallet baccInstance = service.viewAccount(bacc);
 			
 			System.out.println("View fetched accountDetails:");
-			System.out.println(userInstance.getAccountNo());
-			System.out.println(userInstance.getIfscCode());
-			System.out.println(userInstance.getBankName());
-            System.out.println(userInstance.getBalance());
+			System.out.println(baccInstance.getAccountNo());
+			System.out.println(baccInstance.getIfscCode());
+			System.out.println(baccInstance.getBankName());
+            System.out.println(baccInstance.getBalance());
 			
 		}
 		
 		private static void performViewAllAccounts() {
 			
 			service = new AccountServiceImpl();
-			user = new Wallet();
+		      bacc = new BankAccount();
 			
 			System.out.println("\n\nViewAllAccounts");
-			List<Account> list = service.viewAllAccounts();
+			List<Wallet> list = service.viewAllAccounts(bacc);
 			for (Wallet Account : list) {
 				System.out.println(Account);
 			}
