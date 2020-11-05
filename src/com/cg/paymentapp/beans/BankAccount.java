@@ -1,3 +1,6 @@
+/*
+*AUTHOR: Lakshmi Prasanna Adabala*/
+
 package com.cg.paymentapp.beans;
 
 import javax.persistence.Column;
