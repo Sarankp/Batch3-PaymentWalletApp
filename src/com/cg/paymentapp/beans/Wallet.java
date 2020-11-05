@@ -1,3 +1,7 @@
+/*
+*AUTHOR: Harshaswi Dusanapudi*/
+
+
 package com.cg.paymentapp.beans;
 import java.math.BigDecimal;
 import javax.persistence.Column;
