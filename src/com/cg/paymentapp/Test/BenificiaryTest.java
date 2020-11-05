@@ -1,10 +1,7 @@
 package com.cg.paymentapp.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,7 +9,6 @@ import org.junit.jupiter.api.Test;
 
 import com.cg.paymentapp.beans.BenificiaryDetails;
 import com.cg.paymentapp.service.BenificiaryServiceImpl;
-class BenificiaryTest {
 
 class IBeneficiaryDetailsServiceTest {
 	@Nested
@@ -58,15 +54,15 @@ class IBeneficiaryDetailsServiceTest {
 	}
 	@Nested
 	@DisplayName("ViewBeneficiaryDetails :")
-	class ViewBeneficiaryDetailswithId{
+	class ViewBeneficiaryDetailswithMobNo{
 		@Test
 		
-		@DisplayName("check if Id exits")
+		@DisplayName("check if MobNo exits")
 	   
 			void viewBeneficiaryDetailsIdExits() {
 				BenificiaryServiceImpl service = new BenificiaryServiceImpl();
-				BenificiaryDetails beneficiaryDetails = service.viewBeneficiary(i);
-				assertEquals(Id, beneficiaryDetails.getId());
+				BenificiaryDetails beneficiaryDetails = new BenificiaryDetails(4, "saru", "1234567890");;
+				assertEquals(beneficiaryDetails, service.viewBenificiary(beneficiaryDetails));
 			}
 		}
 
@@ -77,7 +73,7 @@ class IBeneficiaryDetailsServiceTest {
 	@Nested
 	@DisplayName("deleteBeneficiaryDetails:")
 	
-	 class DeleteBeneficiaryDetailsTest{
+	 class deleteBeneficiaryDetailsTest{
 		@Test
 		@DisplayName("Deleted Correctly :")
 		void deleteBeneficiaryDetailsCorrectly()  {
@@ -96,4 +92,4 @@ class IBeneficiaryDetailsServiceTest {
 	
 
 	}
-}
+	
