@@ -17,6 +17,16 @@ public class BillPaymentRepositoryImpl implements IBillPaymentRepository{
 		EntityManagerFactory f = Persistence.createEntityManagerFactory("JPA-PU");
 		em=f.createEntityManager();
 	}
+	
+	/************************************************************************************
+	* Function Name	    :	BillPayment
+	* Input Parameters  :	int Billid, double Amount, LoacalDate paymentDate
+	* Return Type	    :	payment
+	* Throws	    :  	InvalidInputException
+	* Author	    :	Sarankumar Pagadala
+	* Creation Date	    :	2020-10-29 to 2020-11-04
+	* Description	    :	BillPayment in Repository
+	*************************************************************************************/
 	@Override
 	public BillPayment addBillPayment(BillPayment payment) {
 		// TODO Auto-generated method stub
