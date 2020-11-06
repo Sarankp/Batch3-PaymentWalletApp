@@ -9,6 +9,16 @@ public class BillPaymentServiceImpl implements IBillPaymentService {
 	public BillPaymentServiceImpl() {
 		pr=new BillPaymentRepositoryImpl();
 	}
+	
+	/****************************************************************************
+	* Function Name	    :	BillPayment
+	* Input Parameters  :	int Billid, double Amount, LoacalDate paymentDate
+	* Return Type	    :	payment
+	* Throws	    :  	InvalidInputException extends RuntimeException
+	* Author	    :	Sarankumar Pagadala
+	* Creation Date	    :	2020-10-29 to 2020-11-04
+	* Description	    :	BillPayment in Service
+	****************************************************************************/
 	@Override
 	public BillPayment addBillPayment(BillPayment payment) {
 		// TODO Auto-generated method stub
